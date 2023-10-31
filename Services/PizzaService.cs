@@ -14,7 +14,7 @@ public static class PizzaService
             new Pizza { Id = 2, Name = "Veggie", IsGlutenFree = true }
         };
     }
-    public static List<Pizza> getAll() => Pizzas;
+    public static List<Pizza> GetAll() => Pizzas;
     public static Pizza? Get(int id) => Pizzas.FirstOrDefault(p => p.Id == id);
     public static void Add(Pizza pizza)
     {
@@ -37,4 +37,5 @@ public static class PizzaService
 
         Pizzas[index] = pizza;
     }
+
 }
