@@ -1,3 +1,4 @@
+using System.Security.Principal;
 using ContosoPizza.Models;
 using ContosoPizza.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -52,4 +53,16 @@ public class PizzaController : ControllerBase
     }
 
     //DELETE action
+    [HttpDelete("{id}")]
+    public IActionResult Delete(int id)
+    {
+        var pizza = PizzaService.Get(id);
+
+        if(pizza is null)
+            return NotFound();
+
+        PizzaService.Delete(id);
+
+        return NoContent();
+    }
 }
