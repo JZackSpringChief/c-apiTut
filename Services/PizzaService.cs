@@ -15,7 +15,7 @@ public static class PizzaService
         };
     }
     public static List<Pizza> getAll() => Pizzas;
-    public static Pizza? Get(int id) => Pizzas.FirstOrDefault(p => p.id == id);
+    public static Pizza? Get(int id) => Pizzas.FirstOrDefault(p => p.Id == id);
     public static void Add(Pizza pizza)
     {
         pizza.Id = nextId++;
@@ -27,11 +27,11 @@ public static class PizzaService
         if(pizza is null)
         return;
 
-        pizza.Remove(pizza);
+        Pizzas.Remove(pizza);
     }
     public static void Update(Pizza pizza)
     {
-        var index = pizza.FindIndex(pizza => p.Id == pizza.Id);
+        var index = Pizzas.FindIndex(p => p.Id == pizza.Id);
         if(index == -1)
         return;
 
