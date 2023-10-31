@@ -19,7 +19,7 @@ public class PizzaController : ControllerBase
     
 
     // GET by Id action
-    [HttpGet("id")]
+    [HttpGet("{id}")]
     public ActionResult<Pizza> Get(int id)
     {
         var pizza = PizzaService.Get(id);
