@@ -14,4 +14,27 @@ public static class PizzaService
             new Pizza { Id = 2, Name = "Veggie", IsGlutenFree = true }
         };
     }
+    public static List<Pizza> getAll() => Pizzas;
+    public static Pizza? Get(int id) => Pizzas.FirstOrDefault(p => p.id == id);
+    public static void Add(Pizza pizza)
+    {
+        pizza.Id = nextId++;
+        Pizzas.Add(pizza);
+    }
+    public static void Delete(int id)
+    {
+        var pizza = Get(id);
+        if(pizza is null)
+        return;
+
+        pizza.Remove(pizza);
+    }
+    public static void Update(Pizza pizza)
+    {
+        var index = pizza.FindIndex(pizza => p.Id == pizza.Id);
+        if(index == -1)
+        return;
+
+        Pizzas[index] = pizza;
+    }
 }
