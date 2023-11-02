@@ -23,3 +23,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+//need to see what i can add for mongo
