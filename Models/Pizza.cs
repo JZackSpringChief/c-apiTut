@@ -6,3 +6,4 @@ public class Pizza
     public string? Name { get; set; }
     public bool IsGlutenFree { get; set; }
 }
+//modify this class
