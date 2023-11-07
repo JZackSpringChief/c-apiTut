@@ -6,3 +6,4 @@ public class Drinks
     public string? Name { get; set; }
     public bool IsGlutenFree { get; set; }
 }
+//add another model
